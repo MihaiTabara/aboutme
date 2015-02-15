@@ -2,7 +2,31 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <p>Hi. I'm a Python developer.
-  </p>
+    <div class="row">
+        <div class="col-md-4 col-md-push-9 sidebar-bg">
+        </div>
+        <div class="col-md-8 col-md-pull-4">
+            <h1>About me</h1>
+            <div style="float: right;">
+                <img src="{{ url_for('static', filename="img/me.jpg") }}" alt="Mihai Tabara" title="Mihai Tabara"/>
+            </div>
+            <p>
+            Hi, my name is Mihai and I live in Bucharest, Romania. I'm a software
+            engineer who enjoys hiking as much as programming.
+            </p>
+
+            <p>The aim of this platform is to gather all my stub-applications, ideas
+            and webapps under the same hood. I'm tinking with several projects now,
+            more to come soon.
+            </p>
+
+            <p>Thanks for stopping by.
+            </p>
+
+            <p> Mihai
+            </p>
+        </div>
+    </div>
+
 {% endblock content %}
 
