@@ -1,5 +1,4 @@
-import flask
-
+from flask import Flask, url_for, redirect
 from .views import portal
 
 DEFAULT_CONFIG = {
@@ -8,7 +7,7 @@ DEFAULT_CONFIG = {
 
 
 def create_app(config={}):
-    app = flask.Flask(__name__,
+    app = Flask(__name__,
                       instance_relative_config=True)
     app.config.update(DEFAULT_CONFIG)
     app.config.from_pyfile('settings.py', silent=True)
@@ -22,6 +21,6 @@ def create_app(config={}):
 
     @app.route('/')
     def index():
-        return 'Successful index page'
+        return redirect(url_for('portal.aboutme'))
 
     return app

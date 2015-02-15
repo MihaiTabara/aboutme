@@ -14,7 +14,36 @@
     <meta name="description" content="About me page">
     <meta name="author" content="Mihai Tabara">
   </head>
+
   <body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">mtabara.ro</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/aboutme">About Me</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <p class="navbar-text" style="margin-top: 10px; margin-bottom: 0px;">
+                            <a href="https://www.facebook.com/tabara.mihai"><img src="{{ url_for('static', filename="img/facebook.png") }}" alt="Facebook" title="Facebook" /></a>
+                            <a href="https://plus.google.com/+MihaiTabara/"><img src="{{ url_for('static', filename="img/googleplus.png") }}" alt="Google+" title="Google+" /></a>
+                            <a href="https://ro.linkedin.com/in/mihaitabara/en/"><img src="{{ url_for('static', filename="img/linkedin.png") }}" alt="LinkedIn" title="LinkedIn" /></a>
+                            <a href="https://github.com/MihaiTabara/"><img src="{{ url_for('static', filename="img/github.png") }}" alt="GitHub" title="GitHub" /></a>
+                            <a href="https://twitter.com/mihaitabara"><img src="{{ url_for('static', filename="img/twitter.png") }}" alt="Twitter" title="Twitter" /></a>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+  </body>
+
     <div class="container">
       <div class="span12">
         {% block content %}

@@ -1,8 +1,9 @@
-import flask
-from flask import render_template
+from flask import render_template, Flask, Blueprint
 
-portal = flask.Blueprint('portal', __name__)
 
-@portal.route('/', methods=['GET'])
-def homepage():
-    return render_template('index.html')
+portal = Blueprint('portal', __name__)
+
+
+@portal.route('/aboutme', methods=['GET'])
+def aboutme():
+    return render_template('aboutme.html')
