@@ -15,6 +15,10 @@ def create_app(config={}):
 
     app.register_blueprint(portal)
 
+    if app.config.get('SENTRY_DSN'):
+        from raven.contrib.flask import Sentry
+        Sentry(app)
+
     @app.route('/crashme')
     def crashme():
         raise RuntimeError('Crashing, as requested.')
