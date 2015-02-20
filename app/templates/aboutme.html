@@ -3,13 +3,14 @@
 
 {% block content %}
     <div class="row">
-        <div class="col-md-4 col-md-push-9 sidebar-bg">
-        </div>
-        <div class="col-md-8 col-md-pull-4">
+        <div class="col-md-4">
             <h3>About me</h3>
-            <div style="float: right;">
-                <img src="{{ url_for('static', filename="img/me.jpg") }}" alt="Mihai Tabara" title="Mihai Tabara"/>
-            </div>
+        </div>
+        <div class="col-md-8">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
             <p>
             Hi, my name is Mihai and I live in Bucharest, Romania. I'm a software
             engineer who enjoys hiking as much as programming.
@@ -20,7 +21,7 @@
             more to come soon.
             </p>
 
-            <p>You can reach me at <a href="mailto:tabara.mihai@gmail.com">tabara.mihai@gmail.com</a>.
+            <p>You can reach me at <a href="mailto:tabara.mihai@gmail.com">tabara.mihai@gmail.com</a>
             </p>
 
             <p>Thanks for stopping by.
@@ -28,6 +29,11 @@
 
             <p> Mihai
             </p>
+        </div>
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename="img/me.jpg") }}" alt="Mihai Tabara" title="Mihai Tabara"/>
+        </div>
+        <div class="col-md-4">
         </div>
     </div>
 
