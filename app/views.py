@@ -1,4 +1,4 @@
-from flask import render_template, Flask, Blueprint
+from flask import render_template, Blueprint
 
 
 portal = Blueprint('portal', __name__)

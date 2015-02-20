@@ -8,7 +8,7 @@ DEFAULT_CONFIG = {
 
 def create_app(config={}):
     app = Flask(__name__,
-                      instance_relative_config=True)
+                instance_relative_config=True)
     app.config.update(DEFAULT_CONFIG)
     app.config.from_pyfile('settings.py', silent=True)
     app.config.update(config)
