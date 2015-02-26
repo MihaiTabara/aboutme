@@ -1,6 +1,6 @@
 from click import CommandCollection
-from app.app import create_app
-from app.manager import cli as manager_cli
+from application.app import create_app
+from application.manager import cli as manager_cli
 
 app = create_app()
 

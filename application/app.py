@@ -1,5 +1,5 @@
 from flask import Flask, url_for, redirect
-from .views import portal
+from application.views import portal
 
 DEFAULT_CONFIG = {
     'DEBUG': True,
