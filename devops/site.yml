@@ -1,0 +1,12 @@
+---
+- name: Install python-dev stuff, Nginx, supervisor, uswgi, aboutme webapp
+  hosts: lancer-server
+  remote_user: mtabara
+  sudo: yes
+
+  roles:
+    - pythondevtools
+    - supervisor-uwsgi
+    - nginx
+    - webapp
+

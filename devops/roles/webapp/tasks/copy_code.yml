@@ -1,0 +1,20 @@
+---
+# Tasks to clone the repo and other dependencies
+
+- name: create webapps directory
+  file: dest={{ webapps_dir }} state=directory
+
+- name: ensure log directory
+  file: dest={{ webapps_dir }}/{{ app_name }}/log state=directory
+
+- name: deploy code from repository
+  git: repo={{ repo_url}} dest={{ webapps_dir }}/{{ app_name }}/src remote={{ repo_remote }} version={{ repo_version }}
+
+- name: ensure instance directory
+  file: dest={{ webapps_dir }}/{{ app_name }}/src/instance state=directory
+
+- name: create settings.py file in instance
+  template: src=settings.py.j2 dest={{ webapps_dir }}/{{ app_name }}/src/instance/settings.py
+
+- name: install dependencies into virtualenv
+  pip: requirements={{ webapps_dir }}/{{ app_name }}/src/requirements.txt virtualenv={{ webapps_dir }}/{{ app_name }}/venv state=present

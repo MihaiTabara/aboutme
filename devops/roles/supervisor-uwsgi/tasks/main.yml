@@ -1,0 +1,20 @@
+---
+# Tasks to install supervisor and uWSGI server to run future apps
+
+- name: install supervisor and uWSGI
+  pip: name={{ item }} state=present
+  with_items:
+    - supervisor
+    - uwsgi
+
+- name: create supervisord config folder
+  file: dest=/etc/supervisor state=directory owner=root
+
+- name: create supervisord config
+  template: src=supervisord.conf.j2 dest=/etc/supervisord.conf
+
+- name: create supervisord init script
+  template: src=supervisord.sh.j2 dest=/etc/init.d/supervisord mode=0755
+
+- name: start supervisord service and have it run during system startup
+  service: name=supervisord state=started enabled=yes

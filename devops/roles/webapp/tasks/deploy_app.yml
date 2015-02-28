@@ -1,0 +1,23 @@
+---
+# Tasks to deploy an app via uWsgi, supervisor and nginx
+
+- name: create supervisor program config
+  template: src=supervisor.ini.j2 dest=/etc/supervisor/{{ app_name }}.ini
+  notify:
+    - restart app
+
+- name: create nginx site config
+  template: src=nginx_site.conf.j2 dest=/etc/nginx/sites-available/{{ app_name }}.conf
+  notify:
+    - restart nginx
+
+- name: link nginx config
+  file: src=/etc/nginx/sites-available/{{ app_name }}.conf dest=/etc/nginx/sites-enabled/{{ app_name }}.conf state=link
+
+- name: start the application
+  supervisorctl: name={{ app_name }} state=started
+
+- name: restart the application just in case something happened meanwhile
+  supervisorctl: name={{ app_name }} state=restarted
+
+

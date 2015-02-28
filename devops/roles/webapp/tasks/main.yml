@@ -1,0 +1,4 @@
+---
+
+- include: copy_code.yml
+- include: deploy_app.yml

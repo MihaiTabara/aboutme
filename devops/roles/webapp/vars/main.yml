@@ -1,0 +1,11 @@
+---
+# Vars related to this specific role of deploying an app
+
+app_name: aboutme
+repo_url: https://github.com/MihaiTabara/aboutme.git
+repo_remote: origin
+repo_version: master
+webapps_dir: /srv/webapps
+wsgi_file: manage.py
+wsgi_callable: app
+nginx_servername: mtabara.ro
