@@ -14,4 +14,5 @@ Ansible production installation
 
 2. Configure the server and deploy the webapp::
 
+    cd devops/
     ansible-playbook site.yml -i hosts --ask-sudo-pass
